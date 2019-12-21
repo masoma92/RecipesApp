@@ -7,6 +7,7 @@ import com.example.favouriterecipes.database.Recipe
 import com.example.favouriterecipes.database.RecipeDatabase
 import com.example.favouriterecipes.database.RecipeDatabaseDao
 import junit.framework.Assert.assertEquals
+import junit.framework.Assert.assertNotNull
 import org.junit.After
 import org.junit.Before
 import org.junit.Test
@@ -39,9 +40,17 @@ class RecipeDatabaseTest {
     @Test
     @Throws(Exception::class)
     fun insertAndGetRecipe(){
-        val recipe = Recipe(1,"Pörkölt")
+        val recipe = Recipe(recipeName = "Pörkölt")
         recipeDao.insert(recipe)
         val currentRecipe = recipeDao.getFirstRecipe()
         assertEquals(currentRecipe?.recipeName, "Pörkölt")
+    }
+
+    @Test
+    @Throws(Exception::class)
+    fun getAllRecipes(){
+        val allRecipes = recipeDao.getAll()
+
+        assertNotNull(allRecipes)
     }
 }

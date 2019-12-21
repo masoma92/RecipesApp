@@ -1,0 +1,10 @@
+package com.example.favouriterecipes.database
+
+fun getRecipes() = listOf<Recipe>(
+    Recipe(recipeName = "Vörösboros marhapörkölt", recipeDescription = "A húst megtisztítjuk, szárazra töröljük, és közepes kockákra vágjuk. A hagymát megpucoljuk, felaprítjuk, és 5 evőkanál olajon aranysárgára pirítjuk. Ekkor felöntjük kevés vízzel, és újból zsírjára sütjük. Közben megsózzuk.\n" +
+            "A húst beledobjuk, és erős tűzön fehéredésig sütjük. Mikor kicsit levet engedett, mehet bele a pirospaprika, a kömény és két gerezd zúzott fokhagyma. A zöldpaprikát kimagozzuk, apró kockákra vágjuk, és beletesszük. Kevés vizet öntünk bele, és megsózzuk. Hagyjuk főni, közben megsózzuk, megborsozzuk. Félidőben megfűszerezzük a kakukkfűvel és majorannával, de épp csak egy csipetnyit adunk hozzá.\n" +
+            "Mikor kb. 1 óra múlva a hús félpuha, hozzáadjuk a felkockázott, meghámozott paradicsomot és a vörösbort is, és barnásra főzzük. A legvégén még egyszer beízesítjük zúzott fokhagymával és köménnyel. Amikor a pörköltünk zamatos, fűszeres, barnás és sűrű, elészült. Főtt krumplival vagy nokedlivel kínáljuk."),
+    Recipe(recipeName = "Gulyásleves", recipeDescription = "A felhevített zsíron üvegesre pároljuk az apróra vágott vöröshagymát. Ezután hozzáadjuk a felkockázott, sózott, borsozott húst, majd fehéredésig pirítjuk. Amikor kifehéredett, megszórjuk a pirospaprikával és az ételízesítővel, felöntjük 0,5 dl vízzel, majd pár percig kevergetve pároljuk. Ezután felöntjük annyi vízzel, hogy jól ellepje, majd félpuhára főzzük a húst.\n" +
+            "Amikor a hús félig megpuhult, hozzáadjuk az ízlés szerint felvágott sárgarépát, petrezselymet, zellert, paprikát és a paradicsomot, majd még egy kevés vízzel felöntjük. Hozzáadjuk az egész borsokat, a köménymagot és a sót, és így főzzük tovább.\n" +
+            "Amikor a hús már majdnem teljesen megpuhult (kb. 35 perc múlva), beletesszük kockára vágott krumplit, és 10 perc alatt teljesen készre főzzük a levest. Tálaláskor a leves mellé kínálhatunk kenyérszeleteket, vagy pogácsát.")
+)
