@@ -11,7 +11,7 @@ interface RecipeDatabaseDao {
     @Insert
     fun insert(recipe: Recipe)
 
-    @Query("SELECT * FROM recipe_table ORDER BY recipe_id")
+    @Query("SELECT * FROM recipe_table")
     fun getAll() : LiveData<List<Recipe>>
 
     @Query("SELECT * FROM recipe_table ORDER BY recipe_id DESC LIMIT 1")

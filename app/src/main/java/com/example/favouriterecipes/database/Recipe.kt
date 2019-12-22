@@ -15,5 +15,9 @@ data class Recipe(
     var recipeName: String = "",
 
     @ColumnInfo(name = "recipe_description")
-    var recipeDescription: String = ""
-)
+    var recipeDescription: String = "") {
+
+    override fun toString(): String {
+        return this.recipeName
+    }
+}

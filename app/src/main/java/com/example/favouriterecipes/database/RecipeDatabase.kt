@@ -35,9 +35,10 @@ abstract class RecipeDatabase: RoomDatabase() {
             return object : Callback(){
                 override fun onCreate(db: SupportSQLiteDatabase){
                     super.onCreate(db)
-                    Thread(Runnable { var recipeDao = getInstance(context).recipeDatabaseDao
-                    for (r in getRecipes())
-                        recipeDao.insert(r)
+                    Thread(Runnable {
+                        var recipeDao = getInstance(context).recipeDatabaseDao
+                        for (r in getRecipes())
+                            recipeDao.insert(r)
                     }).start()
                 }
             }
