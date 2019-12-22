@@ -6,6 +6,12 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+        <Button
+            android:id="@+id/create_recipe"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/create_recipe_button" />
+
         <ListView
             android:id="@+id/listview_recipes"
             android:layout_width="match_parent"

@@ -15,6 +15,9 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
+import androidx.navigation.Navigation
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import com.example.favouriterecipes.R
 import com.example.favouriterecipes.database.Recipe
 import com.example.favouriterecipes.databinding.FragmentRecipesMainBinding
@@ -46,6 +49,8 @@ class RecipesMainFragment : Fragment() {
 
         listView = binding.listviewRecipes
         listView.adapter = adapter
+
+        binding.createRecipe.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_recipesMainFragment_to_createRecipeFragment))
 
         return binding.root
 
