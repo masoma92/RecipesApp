@@ -18,6 +18,7 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.ui.NavigationUI
 import com.example.favouriterecipes.R
 import com.example.favouriterecipes.database.Recipe
 import com.example.favouriterecipes.databinding.FragmentRecipesMainBinding
@@ -40,7 +41,6 @@ class RecipesMainFragment : Fragment() {
 
         viewModel = ViewModelProviders.of(this).get(RecipesMainViewModel::class.java)
 
-
         var adapter = ArrayAdapter<Recipe>(this.requireContext(), android.R.layout.simple_list_item_1)
 
         viewModel.recipes.observe(this, Observer { recipes -> recipes?.forEach{
@@ -50,7 +50,11 @@ class RecipesMainFragment : Fragment() {
         listView = binding.listviewRecipes
         listView.adapter = adapter
 
-        binding.createRecipe.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_recipesMainFragment_to_createRecipeFragment))
+        binding.createRecipeButton.setOnClickListener{
+                view: View -> findNavController().navigate(R.id.action_recipesMainFragment_to_createRecipeFragment)
+        }
+
+        binding.setLifecycleOwner(this)
 
         return binding.root
 

@@ -10,19 +10,15 @@
         android:name="com.example.favouriterecipes.fragments.RecipesMainFragment"
         android:label="RecipesMainFragment">
         <action
-            android:id="@+id/action_recipesMainFragment_to_choosedRecipeFragment"
-            app:destination="@id/choosedRecipeFragment" />
-        <action
             android:id="@+id/action_recipesMainFragment_to_createRecipeFragment"
             app:destination="@id/createRecipeFragment" />
     </fragment>
     <fragment
-        android:id="@+id/choosedRecipeFragment"
-        android:name="com.example.favouriterecipes.fragments.ChoosedRecipeFragment"
-        android:label="fragment_choosed_recipe"
-        tools:layout="@layout/fragment_choosed_recipe" />
-    <fragment
         android:id="@+id/createRecipeFragment"
         android:name="com.example.favouriterecipes.fragments.CreateRecipeFragment"
-        android:label="CreateRecipeFragment" />
+        android:label="CreateRecipeFragment" >
+        <action
+            android:id="@+id/action_createRecipeFragment_to_recipesMainFragment2"
+            app:popUpTo="@id/recipesMainFragment" />
+    </fragment>
 </navigation>

@@ -33,18 +33,16 @@ class CreateRecipeFragment : Fragment() {
         viewModel = ViewModelProviders.of(this).get(CreateRecipeViewModel::class.java)
 
         binding.saveButton.setOnClickListener{
-            createRecipe()
-            Navigation.createNavigateOnClickListener(R.id.recipesMainFragment)}
+            onClick()
+        }
 
         return binding.root
 
     }
 
-    private fun createRecipe(){
-
-        val recipe = Recipe(recipeName = binding.editRecipeName.toString(), recipeDescription = binding.editRecipeDescription.toString())
-
-        viewModel.insertRecipe(recipe)
+    private fun onClick(){
+        viewModel.insertRecipe(binding.editRecipeName.toString(), binding.editRecipeDescription.toString())
+        Navigation.createNavigateOnClickListener(R.id.recipesMainFragment)
     }
 
 
