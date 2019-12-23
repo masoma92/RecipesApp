@@ -7,4 +7,9 @@
     <string name="create_recipe_title">Create Recipe</string>
     <string name="hint_recipe_name">Add recipe name...</string>
     <string name="hint_recipe_desc">Add recipe description...</string>
+    <string name="selected_recipe_title">Recipe</string>
+    <string name="edit_button_title">Edit</string>
+    <string name="delete_button_title">Delete</string>
+    <string name="edit_recipe_title">Edit Recipe</string>
+    <string name="save_button">Save</string>
 </resources>

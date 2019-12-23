@@ -8,17 +8,32 @@
     <fragment
         android:id="@+id/recipesMainFragment"
         android:name="com.example.favouriterecipes.fragments.RecipesMainFragment"
-        android:label="RecipesMainFragment">
+        android:label="RecipesMainFragment"
+        tools:layout="@layout/fragment_recipes_main">
         <action
             android:id="@+id/action_recipesMainFragment_to_createRecipeFragment"
             app:destination="@id/createRecipeFragment" />
+        <action
+            android:id="@+id/action_recipesMainFragment_to_selectedRecipeFragment"
+            app:destination="@id/selectedRecipeFragment" />
     </fragment>
     <fragment
         android:id="@+id/createRecipeFragment"
         android:name="com.example.favouriterecipes.fragments.CreateRecipeFragment"
-        android:label="CreateRecipeFragment" >
+        android:label="CreateRecipeFragment"
+        tools:layout="@layout/fragment_create_recipe"/>
+    <fragment
+        android:id="@+id/selectedRecipeFragment"
+        android:name="com.example.favouriterecipes.fragments.SelectedRecipeFragment"
+        android:label="SelectedRecipeFragment"
+        tools:layout="@layout/fragment_selected_recipe">
         <action
-            android:id="@+id/action_createRecipeFragment_to_recipesMainFragment2"
-            app:popUpTo="@id/recipesMainFragment" />
+            android:id="@+id/action_selectedRecipeFragment_to_editRecipeFragment"
+            app:destination="@id/editRecipeFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/editRecipeFragment"
+        android:name="com.example.favouriterecipes.fragments.EditRecipeFragment"
+        android:label="EditRecipeFragment"
+        tools:layout="@layout/fragment_edit_recipe"/>
 </navigation>

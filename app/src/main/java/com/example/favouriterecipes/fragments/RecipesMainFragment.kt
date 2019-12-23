@@ -50,9 +50,7 @@ class RecipesMainFragment : Fragment() {
         listView = binding.listviewRecipes
         listView.adapter = adapter
 
-        binding.createRecipeButton.setOnClickListener{
-                view: View -> findNavController().navigate(R.id.action_recipesMainFragment_to_createRecipeFragment)
-        }
+        binding.createRecipeButton.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_recipesMainFragment_to_createRecipeFragment))
 
         binding.setLifecycleOwner(this)
 
