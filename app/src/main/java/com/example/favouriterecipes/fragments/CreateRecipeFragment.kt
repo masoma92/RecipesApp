@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.Navigation
+import androidx.navigation.findNavController
 
 import com.example.favouriterecipes.R
 import com.example.favouriterecipes.database.Recipe
@@ -33,7 +34,9 @@ class CreateRecipeFragment : Fragment() {
         viewModel = ViewModelProviders.of(this).get(CreateRecipeViewModel::class.java)
 
         binding.saveButton.setOnClickListener{
+            view: View ->
             onClick()
+            view.findNavController().navigate(R.id.action_createRecipeFragment_to_recipesMainFragment)
         }
 
         return binding.root
@@ -41,7 +44,7 @@ class CreateRecipeFragment : Fragment() {
     }
 
     private fun onClick(){
-        viewModel.insertRecipe(binding.editRecipeName.toString(), binding.editRecipeDescription.toString())
+        viewModel.insertRecipe(binding.editRecipeName.text.toString(), binding.editRecipeDescription.text.toString())
         Navigation.createNavigateOnClickListener(R.id.recipesMainFragment)
     }
 

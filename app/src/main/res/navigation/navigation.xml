@@ -21,7 +21,11 @@
         android:id="@+id/createRecipeFragment"
         android:name="com.example.favouriterecipes.fragments.CreateRecipeFragment"
         android:label="CreateRecipeFragment"
-        tools:layout="@layout/fragment_create_recipe"/>
+        tools:layout="@layout/fragment_create_recipe">
+        <action
+            android:id="@+id/action_createRecipeFragment_to_recipesMainFragment"
+            app:destination="@id/recipesMainFragment" />
+    </fragment>
     <fragment
         android:id="@+id/selectedRecipeFragment"
         android:name="com.example.favouriterecipes.fragments.SelectedRecipeFragment"
