@@ -18,9 +18,13 @@ class SelectedRecipeViewModel(application: Application) : AndroidViewModel(appli
 
     }
 
-    fun deleteSelectedRecipe(){
-        repository.delete(selectedRecipe)
+    fun deleteSelectedRecipe(id: Int){
+        repository.delete(getSelectedRecipe(id))
+    }
 
+    fun getSelectedRecipe(id: Int) : Recipe{
+        val recipes = repository.recipes
+        return recipes.value?.elementAt(id) as Recipe
     }
 
 }

@@ -50,6 +50,12 @@ class RecipesMainFragment : Fragment() {
         listView = binding.listviewRecipes
         listView.adapter = adapter
 
+        listView.setOnItemClickListener { parent, view, position, id ->
+            val action = RecipesMainFragmentDirections.actionRecipesMainFragmentToSelectedRecipeFragment()
+            action.setRecipeId(id.toInt())
+            Navigation.findNavController(activity!!, R.id.selectedRecipeFragment).navigate(action)
+        }
+
         binding.createRecipeButton.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_recipesMainFragment_to_createRecipeFragment))
 
         binding.setLifecycleOwner(this)

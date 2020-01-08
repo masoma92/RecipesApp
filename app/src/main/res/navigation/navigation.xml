@@ -16,6 +16,7 @@
         <action
             android:id="@+id/action_recipesMainFragment_to_selectedRecipeFragment"
             app:destination="@id/selectedRecipeFragment" />
+
     </fragment>
     <fragment
         android:id="@+id/createRecipeFragment"
@@ -34,6 +35,10 @@
         <action
             android:id="@+id/action_selectedRecipeFragment_to_editRecipeFragment"
             app:destination="@id/editRecipeFragment" />
+        <argument
+            android:name="recipeId"
+            app:argType="integer"
+            android:defaultValue="1" />
     </fragment>
     <fragment
         android:id="@+id/editRecipeFragment"

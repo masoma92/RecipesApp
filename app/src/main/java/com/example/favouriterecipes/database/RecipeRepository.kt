@@ -15,4 +15,8 @@ class RecipeRepository(private val databaseDao: RecipeDatabaseDao) {
     fun update(recipe: Recipe){
         databaseDao.update(recipe)
     }
+
+    fun getById(id: Int){
+        val recipes = databaseDao.getAll()
+    }
 }
