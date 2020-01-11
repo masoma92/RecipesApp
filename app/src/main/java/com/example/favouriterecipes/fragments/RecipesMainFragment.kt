@@ -23,6 +23,7 @@ import com.example.favouriterecipes.R
 import com.example.favouriterecipes.database.Recipe
 import com.example.favouriterecipes.databinding.FragmentRecipesMainBinding
 import com.example.favouriterecipes.viewmodels.RecipesMainViewModel
+import kotlinx.android.synthetic.main.fragment_selected_recipe.view.*
 
 /**
  * A simple [Fragment] subclass.
@@ -49,11 +50,15 @@ class RecipesMainFragment : Fragment() {
 
         listView = binding.listviewRecipes
         listView.adapter = adapter
+        listView.onItemSelectedListener=viewModel
 
         listView.setOnItemClickListener { parent, view, position, id ->
-            val action = RecipesMainFragmentDirections.actionRecipesMainFragmentToSelectedRecipeFragment()
+            val action = RecipesMainFragmentDirections
+                .actionRecipesMainFragmentToSelectedRecipeFragment()
+            action.setRecipeName(viewModel.recipes.value?.get(id.toInt())!!.recipeName)
+            action.setRecipeDescription(viewModel.recipes.value?.get(id.toInt())!!.recipeDescription)
             action.setRecipeId(id.toInt())
-            Navigation.findNavController(activity!!, R.id.selectedRecipeFragment).navigate(action)
+            view.findNavController().navigate(action)
         }
 
         binding.createRecipeButton.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_recipesMainFragment_to_createRecipeFragment))

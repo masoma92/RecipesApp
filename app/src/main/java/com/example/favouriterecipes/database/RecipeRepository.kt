@@ -1,5 +1,7 @@
 package com.example.favouriterecipes.database
 
+import androidx.room.Query
+
 class RecipeRepository(private val databaseDao: RecipeDatabaseDao) {
 
     val recipes = databaseDao.getAll()
@@ -8,15 +10,16 @@ class RecipeRepository(private val databaseDao: RecipeDatabaseDao) {
         databaseDao.insert(recipe)
     }
 
-    fun delete(recipe: Recipe){
-        databaseDao.delete(recipe)
+    fun delete(recipeId: Long){
+        databaseDao.delete(recipeId)
     }
 
     fun update(recipe: Recipe){
         databaseDao.update(recipe)
     }
 
-    fun getById(id: Int){
-        val recipes = databaseDao.getAll()
+    fun getById(id: Int): Recipe{
+        return databaseDao.getById(id)
     }
+
 }

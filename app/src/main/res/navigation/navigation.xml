@@ -36,9 +36,17 @@
             android:id="@+id/action_selectedRecipeFragment_to_editRecipeFragment"
             app:destination="@id/editRecipeFragment" />
         <argument
+            android:name="recipeName"
+            app:argType="string"
+            android:defaultValue='"test"' />
+        <argument
+            android:name="recipeDescription"
+            app:argType="string"
+            android:defaultValue='"test"' />
+        <argument
             android:name="recipeId"
             app:argType="integer"
-            android:defaultValue="1" />
+            android:defaultValue="0" />
     </fragment>
     <fragment
         android:id="@+id/editRecipeFragment"

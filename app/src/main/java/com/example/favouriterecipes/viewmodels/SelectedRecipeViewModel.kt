@@ -2,11 +2,14 @@ package com.example.favouriterecipes.viewmodels
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.LiveData
 import com.example.favouriterecipes.database.Recipe
 import com.example.favouriterecipes.database.RecipeDatabase
 import com.example.favouriterecipes.database.RecipeRepository
 
 class SelectedRecipeViewModel(application: Application) : AndroidViewModel(application) {
+
+    //lateinit var selectedRecipe: Recipe
 
     lateinit var selectedRecipe: Recipe
 
@@ -18,13 +21,14 @@ class SelectedRecipeViewModel(application: Application) : AndroidViewModel(appli
 
     }
 
-    fun deleteSelectedRecipe(id: Int){
-        repository.delete(getSelectedRecipe(id))
+    fun deleteSelectedRecipe(){
+        repository.delete(selectedRecipe.recipeId)
     }
 
-    fun getSelectedRecipe(id: Int) : Recipe{
-        val recipes = repository.recipes
-        return recipes.value?.elementAt(id) as Recipe
+    fun setSelectedRecipe(id: Long, recipeName: String, recipeDescription: String){
+
+        selectedRecipe = Recipe(id, recipeName, recipeDescription)
     }
+
 
 }

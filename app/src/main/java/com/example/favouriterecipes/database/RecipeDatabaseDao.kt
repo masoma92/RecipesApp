@@ -13,8 +13,11 @@ interface RecipeDatabaseDao {
     fun insert(recipe: Recipe)
 
     @Delete
-    fun delete(recipe: Recipe)
+    fun delete(recipeId: Long)
 
     @Update
     fun update(recipe: Recipe)
+
+    @Query("SELECT recipe_id, recipe_name, recipe_description FROM recipe_table WHERE recipe_id =:id")
+    fun getById(id: Int): Recipe
 }
