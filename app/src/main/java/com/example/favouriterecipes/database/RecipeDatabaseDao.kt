@@ -12,7 +12,7 @@ interface RecipeDatabaseDao {
     @Insert
     fun insert(recipe: Recipe)
 
-    @Delete
+    @Query("DELETE FROM recipe_table WHERE recipe_id = :recipeId")
     fun delete(recipeId: Long)
 
     @Update
