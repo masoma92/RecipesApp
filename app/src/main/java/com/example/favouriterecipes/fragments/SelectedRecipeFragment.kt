@@ -30,6 +30,10 @@ class SelectedRecipeFragment : Fragment() {
 
         viewModel = ViewModelProviders.of(this).get(SelectedRecipeViewModel::class.java)
 
+        binding.selectedRecipeViewModel = viewModel
+
+        //binding.setLifecycleOwner(this)
+
         return binding.root
     }
 
