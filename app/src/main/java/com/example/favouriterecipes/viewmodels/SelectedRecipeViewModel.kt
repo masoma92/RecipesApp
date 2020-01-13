@@ -41,10 +41,9 @@ class SelectedRecipeViewModel(application: Application) : AndroidViewModel(appli
 
     fun deleteSelectedRecipe(){
         uiScope.launch {
-            val recipeId = selectedRecipe.recipeId
 
             withContext(Dispatchers.IO){
-                repository.delete(recipeId)
+                repository.delete(selectedRecipe.recipeId)
             }
         }
     }

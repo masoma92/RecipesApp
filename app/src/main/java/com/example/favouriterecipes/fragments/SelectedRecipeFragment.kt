@@ -37,6 +37,14 @@ class SelectedRecipeFragment : Fragment() {
             viewModel.deleteSelectedRecipe()
             view.findNavController().navigate(R.id.action_selectedRecipeFragment_to_recipesMainFragment) }
 
+        binding.editButton.setOnClickListener { view: View ->
+            val action = SelectedRecipeFragmentDirections.actionSelectedRecipeFragmentToEditRecipeFragment()
+            action.setRecipeName(viewModel.selectedRecipe.recipeName)
+            action.setRecipeDescription(viewModel.selectedRecipe.recipeDescription)
+            action.setRecipeId(viewModel.selectedRecipe.recipeId)
+            view.findNavController().navigate(action)
+        }
+
         //binding.setLifecycleOwner(this)
 
         return binding.root

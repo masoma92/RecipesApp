@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="editRecipeViewModel"
+            type="com.example.favouriterecipes.viewmodels.EditRecipeViewModel" />
+    </data>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -14,30 +21,43 @@
         <EditText
             android:id="@+id/edit_recipe_name"
             style="@style/recipe_datas"
-            android:textAlignment="center" />
+            android:textAlignment="center"
+            android:text="@{editRecipeViewModel.selectedRecipe.recipeName}"/>
 
-        <EditText
-            android:id="@+id/edit_recipe_description"
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16sp"
-            android:layout_marginTop="16sp"
-            android:layout_marginEnd="16sp"
-            android:ems="10"
-            android:gravity="start|top"
-            android:inputType="textMultiLine"
-            android:textAlignment="textStart"
-            android:textSize="26sp" />
+            android:layout_height="match_parent">
 
-        <Button
-            android:id="@+id/save_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16sp"
-            android:layout_marginTop="16sp"
-            android:layout_marginEnd="16sp"
-            android:text="@string/save_button"
-            android:textSize="20sp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <EditText
+                    android:id="@+id/edit_recipe_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16sp"
+                    android:layout_marginTop="16sp"
+                    android:layout_marginEnd="16sp"
+                    android:ems="10"
+                    android:gravity="start|top"
+                    android:inputType="textMultiLine"
+                    android:textAlignment="textStart"
+                    android:textSize="26sp"
+                    android:text="@{editRecipeViewModel.selectedRecipe.recipeDescription}"/>
+
+                <Button
+                    android:id="@+id/save_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16sp"
+                    android:layout_marginTop="16sp"
+                    android:layout_marginEnd="16sp"
+                    android:text="@string/save_button"
+                    android:textSize="20sp" />
+            </LinearLayout>
+        </ScrollView>
     </LinearLayout>
 
 </layout>
