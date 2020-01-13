@@ -21,8 +21,8 @@
         <EditText
             android:id="@+id/edit_recipe_name"
             style="@style/recipe_datas"
-            android:textAlignment="center"
-            android:text="@{editRecipeViewModel.selectedRecipe.recipeName}"/>
+            android:text="@{editRecipeViewModel.selectedRecipe.recipeName}"
+            android:textAlignment="textStart" />
 
         <ScrollView
             android:layout_width="match_parent"
