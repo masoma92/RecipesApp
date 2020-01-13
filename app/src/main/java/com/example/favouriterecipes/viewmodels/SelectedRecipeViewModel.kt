@@ -47,7 +47,6 @@ class SelectedRecipeViewModel(application: Application) : AndroidViewModel(appli
                 repository.delete(recipeId)
             }
         }
-        Navigation.createNavigateOnClickListener(R.id.recipesMainFragment)
     }
 
 

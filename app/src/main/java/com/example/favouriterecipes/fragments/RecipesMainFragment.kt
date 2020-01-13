@@ -57,7 +57,7 @@ class RecipesMainFragment : Fragment() {
                 .actionRecipesMainFragmentToSelectedRecipeFragment()
             action.setRecipeName(viewModel.recipes.value?.get(id.toInt())!!.recipeName)
             action.setRecipeDescription(viewModel.recipes.value?.get(id.toInt())!!.recipeDescription)
-            action.setRecipeId(id.toInt())
+            action.setRecipeId(viewModel.recipes.value?.get(id.toInt())!!.recipeId)
             view.findNavController().navigate(action)
         }
 

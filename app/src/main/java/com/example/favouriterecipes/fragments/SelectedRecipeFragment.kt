@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModelProviders
+import androidx.navigation.findNavController
 import com.example.favouriterecipes.R
 import com.example.favouriterecipes.database.Recipe
 import com.example.favouriterecipes.databinding.FragmentSelectedRecipeBinding
@@ -32,6 +33,10 @@ class SelectedRecipeFragment : Fragment() {
 
         binding.selectedRecipeViewModel = viewModel
 
+        binding.removeButton.setOnClickListener { view: View ->
+            viewModel.deleteSelectedRecipe()
+            view.findNavController().navigate(R.id.action_selectedRecipeFragment_to_recipesMainFragment) }
+
         //binding.setLifecycleOwner(this)
 
         return binding.root
@@ -42,6 +47,6 @@ class SelectedRecipeFragment : Fragment() {
         val id = SelectedRecipeFragmentArgs.fromBundle(arguments).recipeId
         val recipeName = SelectedRecipeFragmentArgs.fromBundle(arguments).recipeName
         val recipeDescription = SelectedRecipeFragmentArgs.fromBundle(arguments).recipeDescription
-        viewModel.setSelectedRecipe(id.toLong(), recipeName, recipeDescription)
+        viewModel.setSelectedRecipe(id, recipeName, recipeDescription)
     }
 }

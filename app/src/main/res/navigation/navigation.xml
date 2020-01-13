@@ -45,12 +45,22 @@
             android:defaultValue='"test"' />
         <argument
             android:name="recipeId"
-            app:argType="integer"
-            android:defaultValue="0" />
+            app:argType="long"
+            android:defaultValue="0L" />
+        <action
+            android:id="@+id/action_selectedRecipeFragment_to_recipesMainFragment"
+            app:destination="@id/recipesMainFragment" />
     </fragment>
     <fragment
         android:id="@+id/editRecipeFragment"
         android:name="com.example.favouriterecipes.fragments.EditRecipeFragment"
         android:label="EditRecipeFragment"
-        tools:layout="@layout/fragment_edit_recipe"/>
+        tools:layout="@layout/fragment_edit_recipe">
+        <argument
+            android:name="recipeName"
+            app:argType="string" />
+        <argument
+            android:name="recipeId"
+            app:argType="long" />
+    </fragment>
 </navigation>
